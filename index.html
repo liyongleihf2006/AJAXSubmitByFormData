@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="AJAXSubmitByFormData.js"></script>
+</head>
+<body>
+<form id="myForm">
+    <input type="text" name="username">
+    <input type="text" name="password">
+    <input type="checkbox" name="hobby" value="1">
+    <input type="checkbox" name="hobby" value="2">
+    <input type="radio" name="sex" value="1">
+    <input type="radio" name="sex" value="2">
+    <textarea name="description"></textarea>
+    <input type="file" name="pic">
+    <input type="button" value="提交" id="submit">
+</form>
+<script>
+    document.querySelector("#submit").addEventListener("click",function(){
+        AJAXSubmitByFormData({
+            formId:"#myForm",
+            success:function(){
+                console.log(this);
+            },
+            datas:{id:0,name:"haha"},
+            url:"/postData"
+        });
+    });
+</script>
+</body>
+</html>
